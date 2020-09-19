@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#"
+     xml:base="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_forme -->
+
+    <owl:ObjectProperty rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_forme">
+        <owl:inverseOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#est_forme_de"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+        <rdfs:range rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Forme"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_regroupement -->
+
+    <owl:ObjectProperty rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_regroupement">
+        <owl:inverseOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#est_regroupement_de"/>
+        <rdfs:domain rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+        <rdfs:range rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Regroupement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#est_forme_de -->
+
+    <owl:ObjectProperty rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#est_forme_de">
+        <rdfs:domain rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Forme"/>
+        <rdfs:range rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#est_regroupement_de -->
+
+    <owl:ObjectProperty rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#est_regroupement_de">
+        <rdfs:domain rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Regroupement"/>
+        <rdfs:range rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#gram_positif -->
+
+    <owl:DatatypeProperty rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#gram_positif">
+        <rdfs:domain rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#nb_colonies -->
+
+    <owl:DatatypeProperty rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#nb_colonies">
+        <rdfs:domain rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Allongée -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Allongée">
+        <rdfs:subClassOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Forme"/>
+        <owl:disjointWith rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Ronde"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bacille -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bacille">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_forme"/>
+                        <owl:someValuesFrom rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Allongée"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_forme"/>
+                        <owl:allValuesFrom rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Allongée"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Coque -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Coque">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_forme"/>
+                        <owl:someValuesFrom rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Ronde"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_forme"/>
+                        <owl:allValuesFrom rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Ronde"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnAmas -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnAmas">
+        <rdfs:subClassOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Regroupement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnChaîne -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnChaîne">
+        <rdfs:subClassOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Regroupement"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnChaînette"/>
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnFIlament"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnChaînette -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnChaînette">
+        <rdfs:subClassOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnChaîne"/>
+        <owl:disjointWith rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnFIlament"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnFIlament -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnFIlament">
+        <rdfs:subClassOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnChaîne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Forme -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Forme">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Allongée"/>
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Ronde"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Isolé -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Isolé">
+        <rdfs:subClassOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Regroupement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#ParDeux -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#ParDeux">
+        <rdfs:subClassOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Regroupement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Pseudomonas -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Pseudomonas">
+        <rdfs:subClassOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_forme"/>
+                <owl:someValuesFrom rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Allongée"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_regroupement"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Isolé"/>
+                            <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#ParDeux"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_forme"/>
+                <owl:allValuesFrom rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Allongée"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#gram_positif"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Regroupement -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Regroupement">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnAmas"/>
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnChaîne"/>
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Isolé"/>
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#ParDeux"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Ronde -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Ronde">
+        <rdfs:subClassOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Forme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Staphyloque -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Staphyloque">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_forme"/>
+                        <owl:someValuesFrom rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Ronde"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_regroupement"/>
+                        <owl:someValuesFrom rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnAmas"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_forme"/>
+                        <owl:allValuesFrom rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Ronde"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#gram_positif"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Streptocoque -->
+
+    <owl:Class rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Streptocoque">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_forme"/>
+                        <owl:someValuesFrom rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Ronde"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_regroupement"/>
+                        <owl:someValuesFrom rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnChaînette"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_forme"/>
+                        <owl:allValuesFrom rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Ronde"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#a_pour_regroupement"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:complementOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Isolé"/>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#gram_positif"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Bactérie"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#bactérie_inconnue -->
+
+    <owl:NamedIndividual rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#bactérie_inconnue">
+        <a_pour_forme rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#ronde1"/>
+        <a_pour_regroupement rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#en_amas1"/>
+        <gram_positif rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</gram_positif>
+        <nb_colonies rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</nb_colonies>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#en_amas1 -->
+
+    <owl:NamedIndividual rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#en_amas1">
+        <rdf:type rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnAmas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#ronde1 -->
+
+    <owl:NamedIndividual rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#ronde1">
+        <rdf:type rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Ronde"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnAmas"/>
+            <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#EnChaîne"/>
+            <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#Isolé"/>
+            <rdf:Description rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacterie.owl#ParDeux"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
